@@ -94,8 +94,6 @@ By the end of this course, students will:
 
 ---
 
-## Certification
-Students will receive a certificate of completion after successfully finishing the course.
 
 ---
 # 1. Introduction to NoSQL Databases
@@ -142,6 +140,97 @@ SQL databases are best suited for applications that require structured data, str
    - Ideal for applications with complex relationships.
    - **Use Cases**: Social networks, fraud detection, recommendation engines.
    - **Examples**: Neo4j, ArangoDB, Amazon Neptune.
+
+
+# MongoDB Terminologies
+
+This document provides definitions of popular MongoDB terminologies to help understand key concepts used in MongoDB databases. 
+
+## Key MongoDB Terminologies
+
+### General Terms
+
+- **Database**: A container for collections in MongoDB. Each MongoDB deployment can host multiple databases, each storing related collections.
+
+- **Collection**: A grouping of documents within a database, similar to a table in relational databases. Collections hold documents in a JSON-like format and have a flexible schema, meaning documents can vary in structure.
+
+- **Document**: The fundamental data unit in MongoDB, stored as a BSON (Binary JSON) object. Documents are similar to rows in relational databases but can contain nested fields and arrays, offering a more dynamic structure.
+
+- **Field**: A key-value pair in a document, similar to a column in a relational database. Fields in MongoDB are flexible and do not have to be consistent across all documents in a collection.
+
+---
+
+### Data Model Terms
+
+- **Schema-less**: MongoDB is schema-less, meaning documents in a collection do not need to follow a fixed schema. Fields can vary between documents, offering flexibility for different data types and structures.
+
+- **BSON (Binary JSON)**: The format MongoDB uses to store documents. BSON is similar to JSON but optimized for data storage and transfer, supporting additional data types like dates and binary data.
+
+- **Embedded Document**: A document stored within another document. Embedded documents allow for hierarchical data storage, which can improve read performance and make data models more intuitive.
+
+- **Array**: A data type in MongoDB that stores multiple values in a single field, such as a list of items. Arrays allow documents to store more complex and related data within a single record.
+
+---
+
+### Indexing and Query Terms
+
+- **Index**: A data structure that improves query performance by allowing MongoDB to quickly locate documents within a collection. Indexes can be created on one or more fields in a document.
+
+- **Compound Index**: An index on multiple fields in a collection, used to support queries that filter or sort by multiple fields.
+
+- **Aggregation**: A MongoDB feature used to process data and return computed results. Aggregation operations include filtering, grouping, and calculating values, similar to SQL aggregation functions.
+
+- **Pipeline**: A series of aggregation stages in MongoDB. Each stage performs an operation on the data, passing the results to the next stage.
+
+---
+
+### Data Management Terms
+
+- **Replication**: The process of synchronizing data across multiple servers to ensure data redundancy and availability. MongoDB uses **Replica Sets** for replication.
+
+- **Replica Set**: A group of MongoDB servers that maintain the same data. A replica set has a primary node (handles write operations) and secondary nodes (replicate data from the primary), ensuring data availability and redundancy.
+
+- **Sharding**: A method for distributing data across multiple servers (or shards) to scale horizontally. MongoDB uses a **Shard Key** to divide data among shards.
+
+- **Shard Key**: A field or set of fields used to determine how data is distributed across shards in a sharded MongoDB cluster.
+
+---
+
+### Security Terms
+
+- **Authentication**: The process of verifying the identity of users attempting to access MongoDB. MongoDB supports various authentication mechanisms, including username and password.
+
+- **Authorization**: The process of defining which actions a user can perform in MongoDB after they are authenticated. MongoDB uses Role-Based Access Control (RBAC) for authorization.
+
+- **Role-Based Access Control (RBAC)**: A security model in MongoDB where users are assigned roles, and each role grants specific permissions on databases and collections.
+
+---
+
+### Performance and Maintenance Terms
+
+- **Profiler**: A MongoDB tool for analyzing database operations, such as queries and writes, to identify and optimize slow operations.
+
+- **Cursor**: An object used to iterate over the results of a query. Cursors allow MongoDB to handle large datasets by returning results in batches.
+
+- **Log Rotation**: The process of archiving old MongoDB logs and creating new logs to manage log size and improve performance.
+
+- **Snapshot**: A backup technique that captures the state of the database at a specific point in time, often used for backups in production environments.
+
+---
+
+### Advanced Terms
+
+- **MongoDB Atlas**: A cloud-based, fully managed MongoDB service that offers automated backups, monitoring, scaling, and security features.
+
+- **mongod**: The primary daemon process for MongoDB, responsible for managing data storage, accepting connections, and performing operations.
+
+- **mongos**: A routing service used in sharded MongoDB clusters to route queries to the appropriate shard based on the shard key.
+
+- **WiredTiger**: The default storage engine for MongoDB since version 3.2. WiredTiger offers efficient storage management and supports features like compression and concurrency control.
+
+This list covers the essential MongoDB terminology, providing a foundation for understanding MongoDB databases and their management.
+
+
 
 ## Advantages of NoSQL Databases
 
@@ -204,6 +293,19 @@ MongoDB Atlas is a fully managed cloud-based MongoDB service that simplifies set
 1. **Sign Up**: Create an account on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas).
 2. **Create a Cluster**: Select the region and configuration to set up a cluster.
 3. **Connect to MongoDB Atlas**: Obtain the connection string and connect to your cluster using the MongoDB shell, Compass, or an application.
+
+#### MongoDB on Docker container
+Ensure Docker is installed on your machine. Create a mongodb docker container as below:
+```bash
+docker run -d  --name mongodb -p 27017:27017  -e MONGO_INITDB_ROOT_USERNAME=admin -e MONGO_INITDB_ROOT_PASSWORD=password mongo
+```
+Access mongoDB with the following:
+Note: mongosh is available on MongoDB V5.0+. Earlier versions have mongo.
+```
+docker exec -it mongodb mongo -u admin -p password
+OR
+docker exec -it mongodb mongosh -u admin -p password
+```
 
 ### MongoDB Tools
 - **MongoDB Shell (mongosh)**: Command-line interface for MongoDB.
