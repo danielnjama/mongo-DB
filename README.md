@@ -48,35 +48,7 @@ Welcome to the MongoDB course! This course is designed to provide a comprehensiv
   - Common Aggregation Stages (Match, Group, Project)
   - Building Complex Aggregations
 
-### 5. Working with Data in MongoDB
-- **Data Validation and Schema Enforcement**
-  - Using Validation Rules
-  - Schema Best Practices
-- **Transactions in MongoDB**
-  - Understanding MongoDB Transactions
-  - Transactional Use Cases
-- **MongoDB Drivers and Libraries**
-  - Working with MongoDB in Various Programming Languages (JavaScript, Python, etc.)
-
-### 6. Advanced MongoDB Concepts
-- **Replication and High Availability**
-  - Replication and Replica Sets
-  - Setting Up and Configuring Replica Sets
-- **Sharding and Horizontal Scaling**
-  - What is Sharding?
-  - Configuring Sharding in MongoDB
-  - Shard Keys and Performance Considerations
-
-### 7. Performance Tuning and Optimization
-- **Optimizing Queries**
-  - Using Explain to Analyze Query Performance
-  - Optimizing Aggregations
-- **Indexing for Performance**
-  - Index Design Strategies
-  - Managing Indexes in Production
-- **Hardware and Configuration Tuning**
-
-### 8. Security and Best Practices
+### 5. Security and Best Practices
 - **Authentication and Authorization**
   - Role-Based Access Control (RBAC)
   - Configuring User Roles
@@ -87,7 +59,7 @@ Welcome to the MongoDB course! This course is designed to provide a comprehensiv
   - Backup Strategies
   - Restoring Databases
 
-### 9. MongoDB Administration
+### 6. MongoDB Administration
 - **MongoDB CLI Tools**
   - Overview of MongoDB Shell (mongosh)
   - Monitoring and Management Tools
@@ -98,13 +70,6 @@ Welcome to the MongoDB course! This course is designed to provide a comprehensiv
   - Automating Backups, Monitoring, and Alerts
   - Scheduling Maintenance Tasks
 
-### 10. Real-World Applications and Case Studies
-- **Case Studies of MongoDB in Industry**
-  - Real-World Examples from E-commerce, Social Media, IoT, etc.
-- **Building a Sample Application with MongoDB**
-  - Planning and Designing the Data Model
-  - Implementing CRUD Operations
-  - Creating Aggregations and Reports
 
 ---
 
