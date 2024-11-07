@@ -313,6 +313,45 @@ docker exec -it mongodb mongosh -u admin -p password
 - **MongoDB Atlas**: Cloud-based platform for managing MongoDB clusters and databases.
 
 ---
+## MongoDB Data Types
+MongoDB supports a variety of data types that enable the storage of diverse data structures. Here are the primary data types used in MongoDB:
+
+## Core Data Types
+
+1. **String**: Used to store text data. In MongoDB, strings must be UTF-8 encoded.
+```javascript
+{ name: "Alice" }
+```
+2. **Integer**: Used to store whole numbers, such as counts, indexes, or any numeric value without a decimal.
+```javascript
+{ age: 30 }
+```
+3. **Double**: Used to store floating-point numbers with decimal points.
+```javascript
+{ price: 19.99 }
+```
+4. **Boolean**: Used to store binary values true or false.
+```javascript
+{ hasLaptop: true }
+```
+5. **Array**: Used to store a list of values, which can contain mixed data types, including other arrays and documents.
+```javascript
+{ tags: ["technology", "news", "coding"] }
+```
+6. **Date**: Used to store dates and times. Dates are stored with millisecond precision.
+```javascript
+{ createdAt: new Date() }
+```
+7. **Embedded Document (Object)**: A document within a document, allowing for nested structures and complex data models.
+```javascript
+{ address: { city: "New York", zip: "10001" } }
+```
+8. **Null**: Represents a null value, typically used to indicate missing or unknown data.
+```javascript
+{ middleName: null }
+```
+
+MongoDB's flexible data types enable dynamic and complex data structures within documents.
 
 ## Basic MongoDB Commands
 
