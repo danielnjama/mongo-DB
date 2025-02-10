@@ -75,7 +75,6 @@ Welcome to the MongoDB course! This course is designed to provide a comprehensiv
 
 ## Prerequisites
 - Basic knowledge of databases and SQL
-- Familiarity with JavaScript or Python
 
 ## Course Objectives
 By the end of this course, students will:
@@ -373,8 +372,19 @@ use myDatabase
 ### 3. Collection Operations
 - Show Collections: List all collections in the current database
 ```
-show collections
+show collections of all items in a collection
 ```
+db.myCollection.countDocuments({})
+```
+OR
+```
+db.myCollection.aggregate([
+  { $count: "output-name" }
+])
+
+```
+```
+- Show a count of 
 - Create a Collection: Collections are created implicitly when a document is added. Alternatively, create explicitly:
 ```
 db.createCollection("myCollection")
@@ -409,6 +419,15 @@ db.myCollection.updateOne({ name: "Alice" }, { $set: { age: 26 } })
 ```
 db.myCollection.updateMany({ age: { $gt: 25 } }, { $set: { active: true } })
 ```
+- Increase a record: Increase the age of all by 10
+```
+db.myCollection.updateMany({},{$inc: {age: 10}})
+```
+- Increase a record: Increase the age of user with given id
+```
+db.myCollection.updateMany({_id: 20},{$inc: {age: 5}})
+```
+
 **Delete Documents**
 - Delete a single document:
 ```
